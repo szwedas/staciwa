@@ -350,6 +350,22 @@ header {
     top: 16px;
     left: 16px;
 }
+	    <script>
+  function launchFullScreen(element) {
+    if(element.requestFullScreen) {
+      element.requestFullScreen();
+    } else if(element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if(element.webkitRequestFullScreen) {
+      element.webkitRequestFullScreen();
+    }
+  }
+
+  // Uruchom tryb pełnoekranowy po załadowaniu strony
+  document.addEventListener("DOMContentLoaded", function() {
+    launchFullScreen(document.documentElement); // document.documentElement odnosi się do tagu <html>
+  });
+</script>
     </style></head>
     
 
